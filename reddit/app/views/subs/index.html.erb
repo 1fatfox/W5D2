@@ -1,0 +1,13 @@
+<h1>Subs</h1>
+
+<% @subs.each do |s| %>
+  <a href="<%= sub_url(s) %>"><%= s.title %></a>
+  Creator: <%= s.moderator.username %>
+  <br>
+<% end %>
+<br>
+
+<form action="<%= new_sub_url %>" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Create Sub">
+</form>
